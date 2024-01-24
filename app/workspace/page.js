@@ -1,36 +1,118 @@
-'use client';
+"use client";
 
-import { Button, Modal } from 'flowbite-react';
-import { useState } from 'react';
+import { Button, Modal } from "flowbite-react";
+import { useState } from "react";
 
 export default function Workspace() {
-    const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-    return (
-        <section className="flex items-center h-screen bg-white dark:bg-gray-900">
-            <Button className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700" onClick={() => setOpenModal(true)}>Toggle modal</Button>
-            <Modal  dismissible show={openModal} onClose={() => setOpenModal(false)}>
-                <Modal.Header>Terms of Service</Modal.Header>
-                <Modal.Body>
-                    <div className="space-y-6">
-                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-                            companies around the world are updating their terms of service agreements to comply.
-                        </p>
-                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant
-                            to ensure a common set of data rights in the European Union. It requires organizations to notify users as
-                            soon as possible of high-risk data breaches that could personally affect them.
-                        </p>
-                    </div>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={() => setOpenModal(false)}>I accept</Button>
-                    <Button color="gray" onClick={() => setOpenModal(false)}>
-                        Decline
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </section>
-    );
+  return (
+    <section className="flex items-center h-screen bg-white dark:bg-gray-900">
+      <Button
+        className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 fixed bottom-10 right-10"
+        onClick={() => setOpenModal(true)}
+      >
+        Ajouter un outils
+      </Button>
+      <Modal
+        dismissible
+        show={openModal}
+        onClose={() => setOpenModal(false)}
+        style={{ width: "auto", height: "auto" }}
+      >
+        <Modal.Body>
+          <div className="space-y-6">
+            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              {/* header du modal  */}
+              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Boîte à outils
+                </h3>
+                {/* icone de la croix */}
+                <button
+                  type="button"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  onClick={() => setOpenModal(false)}
+                >
+                  <svg
+                    className="w-3 h-3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span className="sr-only">Close modal</span>
+                </button>
+              </div>
+
+              <div className="p-4 md:p-5">
+                <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                  Ajouter une outil à votre espace de travail
+                </p>
+                <ul className="my-4 space-y-3">
+                  <li>
+                    <a
+                      href="#"
+                      className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+                    >
+                      <span className="flex-1 ms-3 whitespace-nowrap">
+                        outil 1
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+                    >
+                      <span className="flex-1 ms-3 whitespace-nowrap">
+                        outil 2
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+                    >
+                      <span className="flex-1 ms-3 whitespace-nowrap">
+                        outil 3
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+                    >
+                      <span className="flex-1 ms-3 whitespace-nowrap">
+                        outil 4
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+                    >
+                      <span className="flex-1 ms-3 whitespace-nowrap">
+                        outil 5
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+    </section>
+  );
 }
