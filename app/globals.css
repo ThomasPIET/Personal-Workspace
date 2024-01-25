@@ -26,3 +26,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.modal {
+  @apply w-auto h-auto mt-24
+  
+}
+
