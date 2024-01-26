@@ -30,6 +30,7 @@ const ToolCard = (props) => {
         ref={cardRef}
         drag
         dragConstraints={constraints}
+        dragMomentum={false}
         whileTap={{ cursor: "grabbing" }}
       >
         <div class=" max-w-sm sh bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
