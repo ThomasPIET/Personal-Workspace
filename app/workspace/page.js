@@ -16,7 +16,6 @@ export default function Workspace() {
       >
         Ajouter un outils
       </Button>
-
       <Modal
         dismissible
         show={openModal}
@@ -84,7 +83,7 @@ export default function Workspace() {
               </li>
               <li>
                 <a
-                   onClick={() => setSelectedTool("outil 3")}
+                  onClick={() => setSelectedTool("outil 3")}
                   className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">outil 3</span>
@@ -92,7 +91,7 @@ export default function Workspace() {
               </li>
               <li>
                 <a
-                   onClick={() => setSelectedTool("outil 4")}
+                  onClick={() => setSelectedTool("outil 4")}
                   className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">outil 4</span>
@@ -100,7 +99,7 @@ export default function Workspace() {
               </li>
               <li>
                 <a
-                   onClick={() => setSelectedTool("outil 5")}
+                  onClick={() => setSelectedTool("outil 5")}
                   className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">outil 5</span>
@@ -110,9 +109,9 @@ export default function Workspace() {
           </div>
         </Modal.Body>
       </Modal>
-
-      {selectedTool && <ToolCard tool={selectedTool} />}
-
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {selectedTool && <ToolCard tool={selectedTool} />}
+      </div>
     </section>
   );
 }
