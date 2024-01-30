@@ -4,16 +4,33 @@
 
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
-import ToolCard from "../components/card.js";
+import Pomodoro from "../components/Pomodoro.js";
+import Outils2 from "../components/outils2.js";
 
 export default function Workspace() {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedTools, setSelectedTools] = useState([]);
+  const [showPomodoro, setShowPomodoro] = useState(false);
+  const [showOutil2, setShowOutil2] = useState(false);
 
-  const handleToolClick = (tool) => {
-    // Vérifier si l'outil est déjà sélectionné
-    if (!selectedTools.includes(tool)) {
-      setSelectedTools([...selectedTools, tool]);
+  const handleToolClick = (toolId) => {
+    switch (toolId) {
+      case "outil 1":
+        setShowPomodoro(true);
+        break;
+      case "outil 2":
+        setShowOutil2(true);
+        break;
+      case "outil 3":
+        console.log("hello3");
+        break;
+      case "outil 4":
+        console.log("hello4");
+        break;
+      case "outil 5":
+        console.log("hello5");
+        break;
+      default:
+        break;
     }
   };
 
@@ -76,7 +93,7 @@ export default function Workspace() {
             </p>
             <ul className="my-4 space-y-3">
               {[1, 2, 3, 4, 5].map((tool) => (
-                <li key={`outil-${tool}`} $>
+                <li key={`outil-${tool}`}>
                   <a
                     onClick={() => handleToolClick(`outil ${tool}`)}
                     className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
@@ -89,11 +106,16 @@ export default function Workspace() {
           </div>
         </Modal.Body>
       </Modal>
-      <div className="flex items-center justify-center ">
-        {selectedTools.map((tool, index) => (
-          <ToolCard key={index} tool={tool} />
-        ))}
-      </div>
+      {showPomodoro && (
+        <div className="flex items-center justify-center ">
+          <Pomodoro></Pomodoro>
+        </div>
+      )}
+      {showOutil2 && (
+        <div className="flex items-center justify-center ">
+          <Outils2></Outils2>
+        </div>
+      )}
     </section>
   );
 }
