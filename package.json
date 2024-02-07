@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.6",
+    "@prisma/client": "^5.9.1",
+    "bcrypt": "^5.1.1",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^11.0.3",
     "next": "14.1.0",
+    "re-resizable": "^6.9.11",
     "react": "^18",
     "react-dom": "^18",
     "react-resizable": "^3.0.5",
@@ -21,6 +25,7 @@
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
+    "prisma": "^5.9.1",
     "tailwindcss": "^3.4.1"
   }
 }

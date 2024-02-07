@@ -20,6 +20,10 @@
 .DS_Store
 *.pem
 
+migration.sql
+
+.env.local
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -42,3 +46,5 @@ vcs.xml
 
 # Contentlayer
 .contentlayer
+.env
+app/prisma/migrations/migration_lock.toml

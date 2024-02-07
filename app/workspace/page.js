@@ -3,14 +3,32 @@
 "use client";
 
 import { Button, Modal } from "flowbite-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Pomodoro from "../components/Pomodoro.js";
 import Outils2 from "../components/outils2.js";
+import Outils3 from "../components/outils3.js";
 
 export default function Workspace() {
   const [openModal, setOpenModal] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
   const [showOutil2, setShowOutil2] = useState(false);
+  const [showOutil3, setShowOutil3] = useState(false);
+
+  const [pomodoroPosition, setPomodoroPosition] = useState({
+    top: "35%",
+    left: "30%",
+    transform: "translate(-50%, -50%)",
+  });
+  const [outil2Position, setOutil2Position] = useState({
+    top: "60%",
+    left: "65%",
+    transform: "translate(-50%, -50%)",
+  });
+  const [outil3Position, setOutil3Position] = useState({
+    top: "70%",
+    left: "30%",
+    transform: "translate(-55%, -55%)",
+  });
 
   const handleToolClick = (toolId) => {
     switch (toolId) {
@@ -21,7 +39,7 @@ export default function Workspace() {
         setShowOutil2(true);
         break;
       case "outil 3":
-        console.log("hello3");
+        setShowOutil3(true)
         break;
       case "outil 4":
         console.log("hello4");
@@ -106,16 +124,44 @@ export default function Workspace() {
           </div>
         </Modal.Body>
       </Modal>
-      {showPomodoro && (
-        <div className="flex items-center justify-center ">
-          <Pomodoro></Pomodoro>
-        </div>
-      )}
-      {showOutil2 && (
-        <div className="flex items-center justify-center ">
-          <Outils2></Outils2>
-        </div>
-      )}
+      <div className="flex items-center justify-center h-screen w-screen position-relative">
+        {showPomodoro && (
+          <div
+            style={{
+              position: "absolute",
+              top: pomodoroPosition.top,
+              left: pomodoroPosition.left,
+              transform: pomodoroPosition.transform,
+            }}
+          >
+            <Pomodoro></Pomodoro>
+          </div>
+        )}
+        {showOutil2 && (
+          <div
+            style={{
+              position: "absolute",
+              top: outil2Position.top,
+              left: outil2Position.left,
+              transform: outil2Position.transform,
+            }}
+          >
+            <Outils2></Outils2>
+          </div>
+        )}
+        {showOutil3 && (
+          <div
+            style={{
+              position: "absolute",
+              top: outil3Position.top,
+              left: outil3Position.left,
+              transform: outil3Position.transform,
+            }}
+          >
+            <Outils3></Outils3>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
