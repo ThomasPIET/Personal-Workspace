@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { createUser } from "../lib/user";
 
 export async function logData(formData) {
@@ -11,5 +12,6 @@ export async function logData(formData) {
     formData.get("password")
   );
 
-  console.log("user created!", user);
+  console.log("user created!");
+  revalidatePath("/register");
 }

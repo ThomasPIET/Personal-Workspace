@@ -1,10 +1,22 @@
+"use client";
+
 import { logData } from "../actions/actions";
+import { useRef } from "react";
 
 export default function Login() {
+  const ref = useRef(null);
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-50 dark:bg-gray-900">
-        <form action={logData}>
+        <form
+          ref={ref}
+          action={async (FormData) => {
+            ref.current?.reset();
+
+            await logData(FormData);
+          }}
+        >
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label
