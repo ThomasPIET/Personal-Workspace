@@ -25,10 +25,20 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+    font-family: 'Satoshi', sans-serif;
 }
 
 .modal {
   @apply w-auto h-auto mt-24
-  
+
 }
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('UI/Satoshi-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 

@@ -4,8 +4,8 @@
 
 import { Button, Modal } from "flowbite-react";
 import { useState, useEffect } from "react";
-import Pomodoro from "../components/Pomodoro.js";
-import Outils2 from "../components/outils2.js";
+import Pomodoro from "../components/pomodoro.js";
+import ToDoList from "../components/todolist.js";
 import Outils3 from "../components/outils3.js";
 
 export default function Workspace() {
@@ -39,7 +39,7 @@ export default function Workspace() {
         setShowOutil2(true);
         break;
       case "outil 3":
-        setShowOutil3(true)
+        setShowOutil3(true);
         break;
       case "outil 4":
         console.log("hello4");
@@ -146,7 +146,7 @@ export default function Workspace() {
               transform: outil2Position.transform,
             }}
           >
-            <Outils2></Outils2>
+            <ToDoList></ToDoList>
           </div>
         )}
         {showOutil3 && (

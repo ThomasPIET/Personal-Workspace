@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Timer from "../components/timer";
+import Timer from "./timer";
 import ToolCard from "../UI/card";
 
 export default function Pomodoro() {
@@ -15,15 +15,7 @@ export default function Pomodoro() {
   const [stage, setStage] = useState(0);
   const [consumedSecond, setConsumedSecond] = useState(0);
 
-  const pomodoroRef = useRef();
-  const shortBreakRef = useRef();
-  const longBreakRef = useRef();
 
-  const updateTimeDefaultValue = () => {
-    setPomodo(pomodoroRef.current.value);
-    setShortBreak(shortBreakRef.current.value);
-    setLongBreak(longBreakRef.current.value);
-  };
 
   const getTickingTime = () => {
     const timeStage = {
@@ -72,7 +64,7 @@ export default function Pomodoro() {
 
     if (Notification.permission === "granted") {
       new Notification("Le pomodoro est terminé !");
-    } else if (Notification.permission !== 'denied') {
+    } else if (Notification.permission !== "denied") {
       Notification.requestPermission().then(function (permission) {
         if (permission === "granted") {
           new Notification("Le pomodoro est terminé !");
