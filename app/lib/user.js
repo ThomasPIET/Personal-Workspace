@@ -11,7 +11,7 @@ export async function createUser(first_name, last_name, email, password) {
   });
 
   if (existingUser) {
-    throw new Error("Email already exists");
+    return new Error("Email already exists");
   }
   try {
     const user = await db.user.create({
@@ -25,7 +25,7 @@ export async function createUser(first_name, last_name, email, password) {
     // implémenter jwt ou mise en cache
   } catch (error) {
     console.error("Erreur lors de la création de l'utilisateur:", error);
-    throw error;
+    return error;
   }
 }
 

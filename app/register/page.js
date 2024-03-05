@@ -3,6 +3,7 @@
 import { logData } from "../actions/actions";
 import { useRef } from "react";
 
+
 export default function Login() {
   const ref = useRef(null);
 
@@ -11,10 +12,13 @@ export default function Login() {
       <div className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-50 dark:bg-gray-900">
         <form
           ref={ref}
-          action={async (FormData) => {
+          action={async (formData) => {
             ref.current?.reset();
 
-            await logData(FormData);
+            const { error } = await logData(formData);
+            if (error) {
+              alert(error.message);
+            }
           }}
         >
           <div className="grid gap-6 mb-6 md:grid-cols-2">
