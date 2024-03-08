@@ -41,4 +41,8 @@ body {
   font-style: normal;
 }
 
+* {
+  border: 1px solid red;
+}
+
 

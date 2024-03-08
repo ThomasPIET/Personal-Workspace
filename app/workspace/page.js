@@ -5,7 +5,7 @@
 import { Button, Modal } from "flowbite-react";
 import { useState, useEffect } from "react";
 import Pomodoro from "../components/pomodoro.js";
-import ToDoList from "../components/todolist.js";
+import Todolist from "../components/todolist.js";
 import Outils3 from "../components/outils3.js";
 
 export default function Workspace() {
@@ -146,7 +146,7 @@ export default function Workspace() {
               transform: outil2Position.transform,
             }}
           >
-            <ToDoList></ToDoList>
+            <Todolist></Todolist>
           </div>
         )}
         {showOutil3 && (

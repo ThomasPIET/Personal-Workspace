@@ -2,7 +2,7 @@
 import ToolCard from "../UI/card";
 import React, { useState } from "react";
 
-export default function ToDoList() {
+export default function Todolist() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [updatedTask, setUpdatedTask] = useState("");
@@ -41,7 +41,7 @@ export default function ToDoList() {
 
   return (
     <ToolCard>
-      <h1 className="text-2xl mb-4">Ma Todolist</h1>
+      <h1 className="text-2xl mb-4">Todolist</h1>
       <div className="flex items-center mb-4">
         <input
           autoFocus
@@ -54,7 +54,7 @@ export default function ToDoList() {
         />
         <button
           onClick={() => addTask(newTask)}
-          className="px-7 py-2 bg-blue-500 text-white rounded flex items-center justify-center"
+          className="px-7 py-2  hover:bg-gray-100 cursor-pointer  border rounded flex items-center justify-center"
         >
           Add
         </button>
@@ -72,7 +72,7 @@ export default function ToDoList() {
           />
           <button
             onClick={() => updateTask(selectedIndex, updatedTask)}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 border hover:bg-white-100 rounded"
           >
             Update
           </button>
@@ -90,13 +90,13 @@ export default function ToDoList() {
                   setUpdatedTask(task);
                   setSelectedIndex(index);
                 }}
-                className="px-3 py-1 bg-blue-500 text-white rounded"
+                className="px-3 py-1 hover:bg-gray-100 cursor-pointer rounded  border"
               >
                 Update
               </button>
               <button
                 onClick={() => deleteTask(index)}
-                className="px-3 py-1 bg-red-500 text-white rounded ml-2"
+                className="px-3 py-1  hover:bg-gray-100 cursor-pointer rounded  border"
               >
                 Delete
               </button>
