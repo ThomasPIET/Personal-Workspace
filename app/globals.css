@@ -41,7 +41,7 @@ body {
   font-style: normal;
 }
 
-* {
+* div {
   border: 1px solid red;
 }
 
